@@ -22,13 +22,21 @@ $I->haveInDatabase('questions', [
 
 $I->haveInDatabase('answers', [
   'id' => 9999,
+<<<<<<< HEAD
   'text' => 'The head of the department of Computer Science is Nik Bessis.',
+=======
+  'text' => 'The head of the department of Computer Science is Prof. Nik Bessis.',
+>>>>>>> 7e77a3effa2f5bda952ed27cff2511e39808803d
   'question_id' => 9999
 ]);
 
 $I->haveInDatabase('answers', [
   'id' => 9998,
+<<<<<<< HEAD
   'text' => 'The director of undergraduate studies is Mark Liptrott.',
+=======
+  'text' => 'The director of undergraduate studies is Dr. Mark Liptrott.',
+>>>>>>> 7e77a3effa2f5bda952ed27cff2511e39808803d
   'question_id' => 9998
 ]);
 
