@@ -28,7 +28,7 @@ $I->haveInDatabase('question_keywords', [
 
 $I->haveInDatabase('follow_up_questions', [
   'id' => 9999,
-  'original_question_id' => 9999,
+  'question_id' => 9999,
   'text' => 'For which course?'
 ]);
 
