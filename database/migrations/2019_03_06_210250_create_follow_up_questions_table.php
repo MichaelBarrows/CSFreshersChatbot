@@ -15,8 +15,8 @@ class CreateFollowUpQuestionsTable extends Migration
     {
         Schema::create('follow_up_questions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('original_question_id');
-            $table->foreign('original_question_id')->references('id')->on('questions');
+            $table->unsignedInteger('question_id');
+            $table->foreign('question_id')->references('id')->on('questions');
             $table->string('text');
             $table->timestamps();
         });
