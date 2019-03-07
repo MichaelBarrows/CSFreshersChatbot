@@ -15,5 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('chat', 'ChatbotController');
+
+Route::resource('faqs', 'FAQController');
+//
+// Route::get('/chat/', function () {
+//     return view('chatbot');
+// });
+
+// Route::get('/faqs/', function () {
+//     return view('faqs/topic');
+// });
+
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
-Route::get('/botman/tinker', 'BotManController@tinker');
+// Route::get('/botman/tinker', 'BotManController@tinker');

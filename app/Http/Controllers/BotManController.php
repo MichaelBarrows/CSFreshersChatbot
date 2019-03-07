@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
-use App\Conversations\ExampleConversation;
+use App\Conversations\ChatbotConversation;
 
 class BotManController extends Controller
 {
@@ -18,20 +18,8 @@ class BotManController extends Controller
         $botman->listen();
     }
 
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function tinker()
+    public function startChatbotConversation(BotMan $bot)
     {
-        return view('tinker');
-    }
-
-    /**
-     * Loaded through routes/botman.php
-     * @param  BotMan $bot
-     */
-    public function startConversation(BotMan $bot)
-    {
-        $bot->startConversation(new ExampleConversation());
+        $bot->startConversation(new ChatbotConversation());
     }
 }
