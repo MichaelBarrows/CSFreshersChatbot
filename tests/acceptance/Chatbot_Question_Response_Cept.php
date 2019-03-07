@@ -5,30 +5,30 @@ $I->wantTo('[Chatbot] Ask a question and receive a response');
 
 $I->haveInDatabase('topics', [
   'id' => 9999,
-  'name' => 'Department Information'
+  'name' => 'Test-Department Information'
 ]);
 
 $I->haveInDatabase('questions', [
   'id' => 9999,
-  'text' => 'Who is the head of the department?',
+  'text' => 'Test-Who is the head of the department?',
   'topic_id' => 9999
 ]);
 
 $I->haveInDatabase('question_keywords', [
   'id' => 9999,
   'question_id' => 9999,
-  'keyword' => 'head'
+  'keyword' => 'Test-head'
 ]);
 
 $I->haveInDatabase('question_keywords', [
   'id' => 9998,
   'question_id' => 9999,
-  'keyword' => 'department'
+  'keyword' => 'Test-department'
 ]);
 
 $I->haveInDatabase('answers', [
   'id' => 9999,
-  'text' => 'The head of the department of Computer Science is Nik Bessis.',
+  'text' => 'Test-The head of the department of Computer Science is Nik Bessis.',
   'question_id' => 9999
 ]);
 
@@ -46,6 +46,6 @@ $I->see("Hello, this is a chatbot for students of Edge Hill University's Departm
 $I->see('How can I help you?');
 $I->seeElement('#user_text');
 
-$I->fillField('user_text', 'Who is the head of the department');
+$I->fillField('user_text', 'Who is the Test-head of the Test-department');
 $I->click('#submit');
-$I->see('The head of the department of Computer Science is Nik Bessis.');
+$I->see('Test-The head of the department of Computer Science is Nik Bessis.');

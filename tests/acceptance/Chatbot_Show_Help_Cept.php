@@ -5,22 +5,22 @@ $I->wantTo('[Chatbot] Recieve a list of topics when I click help');
 
 $I->haveInDatabase('topics', [
   'id' => 9999,
-  'name' => 'Course Information'
+  'name' => 'Test-Course Information'
 ]);
 
 $I->haveInDatabase('topics', [
   'id' => 9998,
-  'name' => 'Department Information'
+  'name' => 'Test-Department Information'
 ]);
 
 $I->haveInDatabase('topics', [
   'id' => 9997,
-  'name' => 'Timetable'
+  'name' => 'Test-Timetable'
 ]);
 
 $I->haveInDatabase('topics', [
   'id' => 9996,
-  'name' => "Students' Union"
+  'name' => "Test-Students' Union"
 ]);
 
 $I->amOnPage('/');
@@ -37,7 +37,7 @@ $I->see("Hello, this is a chatbot for students of Edge Hill University's Departm
 $I->see('How can I help you?');
 $I->click('?');
 
-$I->see('Course Information');
-$I->see('Department Information');
-$I->see('Timetable');
-$I->see("Students' Union");
+$I->see('Test-Course Information');
+$I->see('Test-Department Information');
+$I->see('Test-Timetable');
+$I->see("Test-Students' Union");

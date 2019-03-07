@@ -5,24 +5,24 @@ $I->wantTo("[Chatbot] See an error message when my query doesn't match any keywo
 
 $I->haveInDatabase('topics', [
   'id' => 9999,
-  'name' => 'System Information'
+  'name' => 'Test-System Information'
 ]);
 
 $I->haveInDatabase('questions', [
   'id' => 9999,
-  'text' => 'E01: No Match',
+  'text' => 'Test-E01: No Match',
   'topic_id' => 9999
 ]);
 
 $I->haveInDatabase('question_keywords', [
   'id' => 9999,
   'question_id' => 9999,
-  'keyword' => 'E01'
+  'keyword' => 'Test-E01'
 ]);
 
 $I->haveInDatabase('answers', [
   'id' => 9999,
-  'text' => "Sorry, I don't know about that question. Please ask me something else.",
+  'text' => "Test-Sorry, I don't know about that question. Please ask me something else.",
   'question_id' => 9999
 ]);
 
@@ -40,6 +40,6 @@ $I->see("Hello, this is a chatbot for students of Edge Hill University's Departm
 $I->see('How can I help you?');
 $I->seeElement('#user_text');
 
-$I->fillField('user_text', 'Who approved deadline extensions?');
+$I->fillField('user_text', 'Test-Who approved Test-deadline Test-extensions?');
 $I->click('#submit');
-$I->see("Sorry, I don't know the answer to that question. Please ask me something else.");
+$I->see("Test-Sorry, I don't know the answer to that question. Please ask me something else.");
