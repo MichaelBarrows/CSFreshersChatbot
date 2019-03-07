@@ -88,7 +88,7 @@ $I->see('Test-For which course?');
 $I->see('Test-Web Design and Development');
 $I->see('Test-Computer Science');
 $I->see('Test-Computing');
-$I->click('Web Design and Development');
+$I->click('Test-Web Design and Development');
 $I->dontSee('Test-Computer Science');
 $I->dontSee('Test-Computing');
 $I->see('Test-Web Design and Development');
