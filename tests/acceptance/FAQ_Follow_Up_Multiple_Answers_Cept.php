@@ -32,6 +32,12 @@ $I->haveInDatabase('follow_up_options', [
   'option' => 'Test-Tuesday'
 ]);
 
+$I->haveInDatabase('follow_up_options', [
+  'id' => 9997,
+  'follow_up_question_id' => 9999,
+  'option' => 'Test-Wednesday'
+]);
+
 $I->haveInDatabase('follow_up_responses', [
   'id' => 9999,
   'follow_up_option_id' => 9999,
@@ -70,38 +76,20 @@ $I->haveInDatabase('follow_up_responses', [
 
 $I->haveInDatabase('follow_up_responses', [
   'id' => 9993,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-11AM - 12PM: Careers &amp; Jobs Club  - Tech Hub Lecture Theatre'
+  'follow_up_option_id' => 9997,
+  'response' => 'Test-On Wednesday, you have 2 events.'
 ]);
 
 $I->haveInDatabase('follow_up_responses', [
   'id' => 9992,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-12PM - 1PM: Department Social Event - Pizza Available  - Tech Hub Foyer'
+  'follow_up_option_id' => 9997,
+  'response' => 'Test-9:30AM - 10:45AM: Unismart Session  - H1'
 ]);
 
 $I->haveInDatabase('follow_up_responses', [
   'id' => 9991,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-1PM - 2PM: IT Inductions - THF03/THF04/THF07/THF01'
-]);
-
-$I->haveInDatabase('follow_up_responses', [
-  'id' => 9990,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-2PM - 3PM: Meet Your Personal Tutors - Tech Hub Labs'
-]);
-
-$I->haveInDatabase('follow_up_responses', [
-  'id' => 9989,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-3PM - 3:45PM: Introduction to the Students’ Union and SU Consent Workshop - Tech Hub Lecture Theatre'
-]);
-
-$I->haveInDatabase('follow_up_responses', [
-  'id' => 9988,
-  'follow_up_option_id' => 9998,
-  'response' => 'Test-3:45PM - 4:15PM: Student Services - Tech Hub Lecture Theatre'
+  'follow_up_option_id' => 9997,
+  'response' => "Test-10AM - 2PM: Students' Union Welcome Fair - Hub"
 ]);
 
 $I->amOnPage('/');
@@ -135,10 +123,9 @@ $I->dontSee('Test-On Tuesday, you have 7 events.');
 $I->dontSee('Test-9AM - 11AM: Induction 1 - Processes & Regulations  - Tech Hub Lecture Theatre');
 $I->dontSee('Test-11AM - 12PM: Careers &amp; Jobs Club  - Tech Hub Lecture Theatre');
 $I->dontSee('Test-12PM - 1PM: Department Social Event - Pizza Available  - Tech Hub Foyer');
-$I->dontSee('Test-1PM - 2PM: IT Inductions - THF03/THF04/THF07/THF01');
-$I->dontSee('Test-2PM - 3PM: Meet Your Personal Tutors - Tech Hub Labs');
-$I->dontSee('Test-3PM - 3:45PM: Introduction to the Students’ Union and SU Consent Workshop - Tech Hub Lecture Theatre');
-$I->dontSee('Test-3:45PM - 4:15PM: Student Services - Tech Hub Lecture Theatre');
+$I->dontSee('Test-On Wednesday, you have 2 events.');
+$I->dontSee('Test-9:30AM - 10:45AM: Unismart Session  - H1');
+$I->dontSee("Test-10AM - 2PM: Students' Union Welcome Fair - Hub");
 
 $I->click('Test-Tuesday');
 $I->dontSee('Test-On Monday, you have 3 events.');
@@ -147,9 +134,17 @@ $I->dontSee('Test-1PM - 2PM: Learning Services and Library Talk and introduction
 $I->dontSee('Test-2PM - 3PM: Campus and Library Tour - Tech Hub Foyer');
 $I->see('Test-On Tuesday, you have 7 events.');
 $I->see('Test-9AM - 11AM: Induction 1 - Processes & Regulations  - Tech Hub Lecture Theatre');
-$I->see('Test-11AM - 12PM: Careers &amp; Jobs Club  - Tech Hub Lecture Theatre');
-$I->see('Test-12PM - 1PM: Department Social Event - Pizza Available  - Tech Hub Foyer');
-$I->see('Test-1PM - 2PM: IT Inductions - THF03/THF04/THF07/THF01');
-$I->see('Test-2PM - 3PM: Meet Your Personal Tutors - Tech Hub Labs');
-$I->see('Test-3PM - 3:45PM: Introduction to the Students’ Union and SU Consent Workshop - Tech Hub Lecture Theatre');
-$I->see('Test-3:45PM - 4:15PM: Student Services - Tech Hub Lecture Theatre');
+$I->dontSee('Test-On Wednesday, you have 2 events.');
+$I->dontSee('Test-9:30AM - 10:45AM: Unismart Session  - H1');
+$I->dontSee("Test-10AM - 2PM: Students' Union Welcome Fair - Hub");
+
+$I->click('Test-Wednesday');
+$I->dontSee('Test-On Monday, you have 3 events.');
+$I->dontSee('Test-12PM - 1PM: Computer Science Department Welcome Talk - Tech Hub Lecture Theatre');
+$I->dontSee('Test-1PM - 2PM: Learning Services and Library Talk and introduction of Student Mentors - Tech Hub Lecture Theatre');
+$I->dontSee('Test-2PM - 3PM: Campus and Library Tour - Tech Hub Foyer');
+$I->dontSee('Test-On Tuesday, you have 7 events.');
+$I->dontSee('Test-9AM - 11AM: Induction 1 - Processes & Regulations  - Tech Hub Lecture Theatre');
+$I->see('Test-On Wednesday, you have 2 events.');
+$I->see('Test-9:30AM - 10:45AM: Unismart Session  - H1');
+$I->see("Test-10AM - 2PM: Students' Union Welcome Fair - Hub");
