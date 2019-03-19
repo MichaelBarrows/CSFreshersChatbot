@@ -18,6 +18,11 @@ class BotManController extends Controller
         $botman->listen();
     }
 
+    public function tinker()
+       {
+           return view('tinker');
+       }
+       
     public function startChatbotConversation(BotMan $bot)
     {
         $bot->startConversation(new ChatbotConversation());
