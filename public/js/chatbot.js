@@ -10,7 +10,7 @@
  *      someone elses conversation)
  * * To process clicks on button elements
  *
- * @author Michael Barrows <michael.barrows@go.edgehill.ac.uk>
+ * @author Michael Barrows <contact@michaelbarrows.co.uk>
  */
 
 // Used to assign an id to chatbot response elements

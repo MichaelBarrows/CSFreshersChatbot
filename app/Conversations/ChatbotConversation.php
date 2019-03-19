@@ -8,7 +8,7 @@
  * the interface.
  * The conversation also handles stopping the conversation and error resolution.
  *
- * @author Michael Barrows <michael.barrows@go.edgehill.ac.uk>
+ * @author Michael Barrows <contact@michaelbarrows.co.uk>
  */
 
 namespace App\Conversations;
