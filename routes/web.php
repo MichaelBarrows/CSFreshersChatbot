@@ -11,21 +11,34 @@
 |
 */
 
+// Route::get('/botman/tinker', 'BotManController@tinker');
+
+/**
+ * Home page
+ *
+ * Returns the home page view.
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Chat page
+ *
+ * Calls the chatbot controller to process keywords and return the view.
+ */
 Route::resource('chat', 'ChatbotController');
 
+/**
+ * FAQ's page
+ *
+ * Calls the FAQ controller to return the view.
+ */
 Route::resource('faqs', 'FAQController');
-//
-// Route::get('/chat/', function () {
-//     return view('chatbot');
-// });
 
-// Route::get('/faqs/', function () {
-//     return view('faqs/topic');
-// });
-
+/**
+ * Chatbot API
+ *
+ * Calls the botman controller to handle all chatbot api calls.
+ */
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
-// Route::get('/botman/tinker', 'BotManController@tinker');

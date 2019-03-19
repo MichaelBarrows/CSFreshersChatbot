@@ -1,0 +1,123 @@
+@import url(https://use.fontawesome.com/6743a74a84.css);* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  background-color: #000000;
+  color: #FFFFFF;
+  vertical-align: middle;
+  position: fixed;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.75em;
+  padding: 15px;
+}
+
+header h1 #help {
+  color: #FFFFFF;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+}
+
+header .clear {
+  clear: both;
+}
+
+#messages {
+  padding-top: 75px;
+  padding-bottom: 45px;
+  overflow: scroll;
+}
+
+#messages p.message {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* font-size: 1.1em; */
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+#messages p.chatbot_message {
+  background-color: #671E75;
+  color: #FFFFFF;
+  margin-left: 3vw;
+  margin-right: 20vw;
+}
+
+#messages p.chatbot_message a.option {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#messages p.chatbot_message a.option:link,
+#messages p.chatbot_message a.option:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#messages p.user_message {
+  background-color: #000000;
+  color: #FFFFFF;
+  margin-left: 20vw;
+  margin-right: 3vw;
+}
+
+form#user_message_form {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #000000;
+  background-color: #000000;
+}
+
+form#user_message_form #user_text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 87vw;
+  font-size: 1.1em;
+  padding: 7.5px;
+  border: none;
+  bottom: 1px;
+  position: absolute;
+  margin: 0 6px 5px 6px;
+}
+
+form#user_message_form #submit {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 9.5vw;
+  font-size: 1.75em;
+  float: right;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+}
+
+form#user_message_form #submit .fa::before {
+  display: block;
+  padding: 9px;
+  padding-left: 5px;
+}
+
