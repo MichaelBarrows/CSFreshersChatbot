@@ -11,6 +11,7 @@ class AnswersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('answers')->truncate();
         DB::table('answers')->insert([
             ['id' => 1, 'text' => "Freshers' week 2018 takes place between Monday 17th September until Friday 21st September.", 'question_id' => 1],
             ['id' => 2, 'text' => "You must attend all compulsory events on your induction timetable", 'question_id' => 2],

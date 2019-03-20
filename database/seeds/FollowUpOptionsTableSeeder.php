@@ -11,6 +11,7 @@ class FollowUpOptionsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('follow_up_options')->truncate();
         DB::table('follow_up_options')->insert([
             ['id' => 1, 'follow_up_question_id' => 1, "option" => "Monday"],
             ['id' => 2, 'follow_up_question_id' => 1, "option" => "Tuesday"],

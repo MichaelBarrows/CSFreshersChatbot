@@ -11,6 +11,7 @@ class QuestionsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('questions')->truncate();
         DB::table('questions')->insert([
             ['id' => 1, 'text' => "When is freshers week?", "topic_id" => 1],
             ['id' => 2, 'text' => "Do I have to attend every event on my induction timetable?", "topic_id" => 1],

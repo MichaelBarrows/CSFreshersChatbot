@@ -29,7 +29,7 @@ use App\Keyword as CSKeyword;
 use App\FollowUpOption as CSFUOption;
 use App\FollowUpResponse as CSFUResponse;
 use App\UserId;
-use App\Log;
+use App\ChatbotSettings;
 
 
 class ChatbotConversation extends Conversation {
@@ -39,6 +39,7 @@ class ChatbotConversation extends Conversation {
     protected $user_response_words;
     protected $user_keywords;
     protected $user_id;
+    protected $keyword_api;
 
     /**
      * Introduction()
@@ -161,12 +162,18 @@ class ChatbotConversation extends Conversation {
      * @param string $user_response  Text that the user sent to the chatbot.
      */
     public function getKeywordsFromAPI($user_response) {
-        $this->user_response_words = preg_split("/[\s,-?!]+/", $user_response->getText());
-        $client = new Client(['base_uri' => 'http://localhost:5000']);
-        $api_response = $client->request('POST', '/?query=' . $user_response);
-        $response = json_decode($api_response->getBody());
-        $this->user_keywords = preg_split("/[\s,-?!]+/", $response->response);
-        return;
+        if ($this->keyword_api == "true") {
+            $this->user_response_words = preg_split("/[\s,-?!]+/", $user_response->getText());
+            $client = new Client(['base_uri' => 'http://localhost:5000']);
+            $api_response = $client->request('POST', '/?query=' . $user_response);
+            $response = json_decode($api_response->getBody());
+            $this->user_keywords = preg_split("/[\s,-?!]+/", $response->response);
+            return;
+        } else {
+            $this->user_keywords = preg_split("/[\s,-?!]+/", $this->user_query);
+            $this->user_response_words = preg_split("/[\s,-?!]+/", $user_response->getText());
+            return;
+        }
     }
 
     /**
@@ -630,6 +637,7 @@ class ChatbotConversation extends Conversation {
      */
     public function run() {
         $this->user_query = "hello";
+        $this->keyword_api = ChatbotSettings::whereName('keyword_api')->first()->setting;
         $this->introduction("How can I help you?");
     }
 }

@@ -11,6 +11,8 @@ class TopicsTableSeeder extends Seeder
      */
     public function run()
     {
+
+        DB::table('topics')->truncate();
         DB::table('topics')->insert([
             ['id' => 1, 'name' => "Induction Week"],
             ['id' => 2, 'name' => "Course Information"],

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Keyword;
 use App\Question;
+use App\ChatbotSettings;
 use GuzzleHttp\Client;
 
 class ChatbotController extends Controller
@@ -19,20 +20,23 @@ class ChatbotController extends Controller
      * Once this is completed, the chatbot interface is returned to the user.
      */
     public function index() {
-        $client = new Client(['base_uri' => 'http://localhost:5000']);
-        foreach(Question::all() as $question) {
-            if (!$question->keywords()->exists()) {
-                $api_response = $client->request('POST', '/?query=' . $question->text);
-                $response = json_decode($api_response->getBody());
-                $keywords = preg_split("/[\s,-?!]+/", $response->response);
-                foreach($keywords as $keyword) {
-                    $db_keyword = Keyword::where('keyword', '=', $keyword)->get();
-                    if (count($db_keyword) == 0) {
-                        $db_keyword = Keyword::create(['keyword' => $keyword])->id;
-                    } else {
-                        $db_keyword = Keyword::where('keyword', '=', $keyword)->first()->id;
+        $keyword_api = ChatbotSettings::whereName('keyword_api')->first();
+        if ($keyword_api->setting == "true") {
+            $client = new Client(['base_uri' => 'http://localhost:5000']);
+            foreach(Question::all() as $question) {
+                if (!$question->keywords()->exists()) {
+                    $api_response = $client->request('POST', '/?query=' . $question->text);
+                    $response = json_decode($api_response->getBody());
+                    $keywords = preg_split("/[\s,-?!]+/", $response->response);
+                    foreach($keywords as $keyword) {
+                        $db_keyword = Keyword::where('keyword', '=', $keyword)->get();
+                        if (count($db_keyword) == 0) {
+                            $db_keyword = Keyword::create(['keyword' => $keyword])->id;
+                        } else {
+                            $db_keyword = Keyword::where('keyword', '=', $keyword)->first()->id;
+                        }
+                        $question->keywords()->attach($db_keyword);
                     }
-                    $question->keywords()->attach($db_keyword);
                 }
             }
         }

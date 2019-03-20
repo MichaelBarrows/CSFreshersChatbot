@@ -11,6 +11,7 @@ class FollowUpQuestionsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('follow_up_questions')->truncate();
         DB::table('follow_up_questions')->insert([
             ['id' => 1, 'question_id' => 4, 'text' => "For which day?"],
             ['id' => 2, 'question_id' => 6, 'text' => "You can download your induction timetable by selecting your course below"],

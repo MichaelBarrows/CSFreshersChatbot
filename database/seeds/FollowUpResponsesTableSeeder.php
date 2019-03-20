@@ -11,6 +11,7 @@ class FollowUpResponsesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('follow_up_responses')->truncate();
         DB::table('follow_up_responses')->insert([
             ['id' => 1, 'follow_up_option_id' => 1, "response" => "There are 3 events on Monday:"],
             ['id' => 2, 'follow_up_option_id' => 1, "response" => "12-1PM: Computer Science Department Welcome Talk [Tech Hub Lecture Theatre]"],
