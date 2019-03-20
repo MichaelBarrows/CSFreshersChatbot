@@ -23,16 +23,26 @@ class Chatbot_Follow_Up_Question_Cest
             'topic_id' => 9999
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
             'id' => 9999,
-            'question_id' => 9999,
             'keyword' => 'testcourse'
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
+            'id' => 9998,
+            'keyword' => 'testleader'
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
+            'id' => 9999,
+            'question_id' => 9999,
+            'keyword_id' => 9999
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
             'id' => 9998,
             'question_id' => 9999,
-            'keyword' => 'testleader'
+            'keyword_id' => 9998
         ]);
 
         $I->haveInDatabase('follow_up_questions', [

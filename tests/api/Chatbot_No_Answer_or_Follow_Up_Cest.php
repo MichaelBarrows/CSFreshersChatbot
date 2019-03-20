@@ -34,22 +34,37 @@ class Chatbot_No_Answer_or_Follow_Up_Cest
             'topic_id' => 9998
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
             'id' => 9999,
-            'question_id' => 9999,
             'keyword' => 'testextension'
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
             'id' => 9998,
-            'question_id' => 9999,
             'keyword' => 'testdeadline'
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
+            'id' => 9997,
+            'keyword' => 'test-e02'
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
+            'id' => 9999,
+            'question_id' => 9999,
+            'keyword_id' => 9999
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
+            'id' => 9998,
+            'question_id' => 9999,
+            'keyword_id' => 9999
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
             'id' => 9997,
             'question_id' => 9998,
-            'keyword' => 'test-e02'
+            'keyword_id' => 9997
         ]);
 
         $I->haveInDatabase('answers', [

@@ -23,16 +23,26 @@ class Chatbot_Question_Response_Cest
           'topic_id' => 9999
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
           'id' => 9999,
-          'question_id' => 9999,
           'keyword' => 'testhead'
         ]);
 
-        $I->haveInDatabase('question_keywords', [
+        $I->haveInDatabase('keywords', [
+          'id' => 9998,
+          'keyword' => 'testdepartment'
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
+          'id' => 9999,
+          'question_id' => 9999,
+          'keyword_id' => 9999
+        ]);
+
+        $I->haveInDatabase('keyword_question', [
           'id' => 9998,
           'question_id' => 9999,
-          'keyword' => 'testdepartment'
+          'keyword_id' => 9998
         ]);
 
         $I->haveInDatabase('answers', [
@@ -64,7 +74,7 @@ class Chatbot_Question_Response_Cest
                 ]
             ]
         ]);
-        
+
         $I->seeResponseContainsJson([
             'messages' => [
                 '1' => [
