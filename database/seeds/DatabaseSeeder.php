@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $this->call(FollowUpOptionsTableSeeder::class);
         $this->call(FollowUpResponsesTableSeeder::class);
         $this->call(ChatbotSettingsTableSeeder::class);
+        $this->call(KeywordsTableSeeder::class);
+        $this->call(KeywordQuestionsTableSeeder::class);
 
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
         Model::reguard();
