@@ -29,7 +29,6 @@ class FollowUpOptionsTableSeeder extends Seeder
             ['id' => 14, 'follow_up_question_id' => 2, "option" => "Computing (Networking, Security and Forensics)"],
             ['id' => 15, 'follow_up_question_id' => 2, "option" => "Software Application Development"],
             ['id' => 16, 'follow_up_question_id' => 2, "option" => "Web Design and Development"],
-
             ['id' => 17, 'follow_up_question_id' => 3, "option" => "Business Information Systems"],
             ['id' => 18, 'follow_up_question_id' => 3, "option" => "Information Technology Management for Business (ITMB)"],
             ['id' => 19, 'follow_up_question_id' => 3, "option" => "Computer Science"],

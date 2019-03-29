@@ -596,7 +596,7 @@ class ChatbotConversation extends Conversation {
         for ($idx = 0; $idx < count($all_topics); $idx++) {
             if ($idx == count($all_topics) - 1) {
                 $string = $string . " " . $all_topics[$idx] . ".";
-            }else {
+            } else {
                 $string = $string . " " . $all_topics[$idx] . ",";
             }
 

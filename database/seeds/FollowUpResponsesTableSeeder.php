@@ -46,7 +46,6 @@ class FollowUpResponsesTableSeeder extends Seeder
             ['id' => 32, 'follow_up_option_id' => 14, "response" => "link https://www.edgehill.ac.uk/gettingstarted/files/2018/08/BSc-Hons-Computing-Networking-Security-and-Forensics.docx.pdf"],
             ['id' => 33, 'follow_up_option_id' => 15, "response" => "link https://www.edgehill.ac.uk/gettingstarted/files/2018/08/MComp-Software-Application-Development.docx.pdf"],
             ['id' => 34, 'follow_up_option_id' => 16, "response" => "link https://www.edgehill.ac.uk/gettingstarted/files/2018/08/BSc-Hons-Web-Design-and-Development.docx.pdf"],
-
             ['id' => 35, 'follow_up_option_id' => 17, "response" => "The course leader for Business Information Systems is David Walsh"],
             ['id' => 36, 'follow_up_option_id' => 18, "response" => "The course leader for Information Technology Management for Business (ITMB) is David Walsh"],
             ['id' => 37, 'follow_up_option_id' => 19, "response" => "The course leader for Computer Science is Dr Ardhendu Behera"],

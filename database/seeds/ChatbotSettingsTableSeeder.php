@@ -13,7 +13,7 @@ class ChatbotSettingsTableSeeder extends Seeder
     {
         DB::table('chatbot_settings')->truncate();
         DB::table('chatbot_settings')->insert([
-            ['id' => 1, 'name' => 'keyword_api', "setting" => "false"],
+            ['id' => 1, 'name' => 'keyword_api', "setting" => "true"],
         ]);
     }
 }
