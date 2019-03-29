@@ -34,14 +34,21 @@
                                 <ul class="follow-up-options">
                                     <!-- List of options (initially hidden) -->
                                     @foreach($question->fu_question->fu_options as $option)
-                                        <li><a href="#" id="follow-up-option-{{ $option->id }}">{{ $option->option }} <span class="fa fa-plus"></span></a>
-                                        @if (isset($option->fu_responses))
-                                            <ul class="follow-up-answers hide">
-                                                <!-- Responses to each of the follow up options (initially hidden) -->
-                                                @foreach($option->fu_responses as $response)
-                                                    <li>{{ $response->response }}</li>
-                                                @endforeach
-                                            </ul>
+                                        @php
+                                            $response_bits = preg_split("/[\s]+/", $option->fu_responses[0]->response);
+                                        @endphp
+                                        @if ($response_bits[0] == "link")
+                                            <li><a href="{{$response_bits[1]}}" target="_blank">{{ $option->option }} <span class="fa fa-external-link"></span></a>
+                                        @else
+                                            <li><a href="#" id="follow-up-option-{{ $option->id }}">{{ $option->option }} <span class="fa fa-plus"></span></a>
+                                            @if (isset($option->fu_responses))
+                                                <ul class="follow-up-answers hide">
+                                                    <!-- Responses to each of the follow up options (initially hidden) -->
+                                                    @foreach($option->fu_responses as $response)
+                                                        <li>{{ $response->response }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
                                         @endif
                                     @endforeach
                                 </ul>
