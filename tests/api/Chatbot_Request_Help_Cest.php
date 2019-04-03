@@ -29,9 +29,9 @@ class Chatbot_Request_Help_Cest
         $I->seeResponseIsJson();
         $I->seeResponseContainsJson([
             'type' => 'text',
-            'text' => "I know about the following topics: Freshers' Week, Course Information, Department Information, University Information, Students' Union, Student Services, Facilities Management, IT Services, Campus Support, Library."
+            'text' => "I know about the following topics:  Freshers' Week, Course Information, Department Information, University Information, Students' Union, Student Services, Facilities Management, IT Services, Campus Support, Library."
         ]);
-        
+
         $I->seeResponseContainsJson([
             'type' => 'text',
             'text' => "Is there anything else I can help you with?"
