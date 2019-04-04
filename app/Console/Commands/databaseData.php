@@ -18,7 +18,7 @@ class databaseData extends Command
      *
      * @var string
      */
-    protected $description = 'Create the database tables and seed them.';
+    protected $description = 'Migrates the database tables and fills with data from seed files.';
 
     /**
      * Create a new command instance.
