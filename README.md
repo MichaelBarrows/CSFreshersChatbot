@@ -2,7 +2,7 @@
 Created by Michael Barrows (22686134)
 
 ### Installation
-To install the required dependencies for the Chatbot Driven Mobile Web Application and the FAQ's Mobile Website, please complete the following commands within the `chatbot_and_faqs` folder in order:
+To install the required dependencies for the Chatbot Driven Mobile Web Application and the FAQ's Mobile Website, please complete the following commands within this folder in order:
 ```
 composer install
 npm install
